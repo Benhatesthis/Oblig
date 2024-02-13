@@ -17,8 +17,13 @@ function kjop() {
     if (!telefon){
         alert("Du må fylle inn telefon boksen.");
     }
-    if (epost==0){
-        alert("Oppgi eposten din.")
+    if (!epost){
+        alert("Du må fylle inn epost boksen.");
+        return;
+    }
+    if (!validateEmail(epost)) {
+        alert("Oppgi en gyldig epostadresse.");
+        return;
     }
     const tall=(document.getElementById("antall").value);
     if (isNaN(tall)){
@@ -33,4 +38,24 @@ function kjop() {
         telefon: telefon,
         epost: epost
     };
+    let ut="";
+
+    bilettliste.push(bilett);
+
+    for (let i of bilettliste){
+        ut+="Film : "+i.film+"<br>"+"Antall : "+i.antall+"<br>"+"Fornavn : "+i.fornavn+"<br>"+
+            "Etternavn : "+i.etternavn+"<br>"+"Telefonnr : "+i.telefon+"<br>"+"Epost : "+i.epost+"<br>"
+    }
+
+    document.getElementById("utFelt").innerHTML=ut;
+}
+function slett() {
+    // Sletter informasjonen i arrayet.
+    document.getElementById("utFelt").innerHTML="";
+    bilettliste.length=0;
+}
+function validateEmail(email) {
+    // vanlig epost utrykk sjekk.
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
 }
