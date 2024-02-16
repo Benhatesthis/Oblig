@@ -2,20 +2,30 @@ let bilettliste=[]
 
 function kjop() {
     let film=document.getElementById("film").value;
-
+    let antall=document.getElementById("antall").value;
     let fornavn=document.getElementById("fornavn").value;
     let etternavn=document.getElementById("etternavn").value;
     let telefon=document.getElementById("telefon").value;
     let epost=document.getElementById("epost").value;
 
+    //Fjerner tidligere error meldinger.
+    document.querySelectorAll('.error').forEach((element) => {
+        element.innerHTML ='';
+    });
+
+    let errors = [];
+
     if (!fornavn){
-        alert("Du må fylle inn fornavn boksen.");
+        errors.push("Du må fylle inn fornavn i boksen.")
+       document.getElementById("fornavnError").innerHTML= errors[errors.length -1];
     }
     if (!etternavn){
-        alert("Du må fylle inn etternavn boksen.");
+        errors.push("Du må fylle inn etternavn boksen.")
+        document.getElementById("etternavnError").innerHTML = errors[errors.length -1];
     }
     if (!telefon){
-        alert("Du må fylle inn telefon boksen.");
+        errors.push("Du må fylle inn telefon boksen.")
+        document.getElementById("telefonError").innerHTML = errors[errors.length -1];
     }
     if (!epost){
         alert("Du må fylle inn epost boksen.");
@@ -25,22 +35,25 @@ function kjop() {
         alert("Oppgi en gyldig epostadresse.");
         return;
     }
-    const tall=(document.getElementById("antall").value);
-    if (isNaN(tall)){
+    if (isNaN(antall)){
         alert("Du må skrive inn antall biletter.")
     }
+    if (!film){
+        document.getElementById("film").innerHTML="Du må velge en film"
+    }
 
-    const bilett = {
+    let bilett = {
         film: film,
-        antall: tall,
+        antall: antall,
         fornavn: fornavn,
         etternavn: etternavn,
         telefon: telefon,
         epost: epost
     };
+    bilettliste.push(bilett);
+
     let ut="";
 
-    bilettliste.push(bilett);
 
     for (let i of bilettliste){
         ut+="Film : "+i.film+"<br>"+"Antall : "+i.antall+"<br>"+"Fornavn : "+i.fornavn+"<br>"+
@@ -49,6 +62,15 @@ function kjop() {
 
     document.getElementById("utFelt").innerHTML=ut;
 }
+// gjør feltene blanke.
+document.getElementById('film').value="";
+document.getElementById('fornavn').value="";
+document.getElementById('etternavn').value="";
+document.getElementById('telefon').value="";
+document.getElementById('epost').value="";
+document.getElementById('antall').value="";
+
+
 function slett() {
     // Sletter informasjonen i arrayet.
     document.getElementById("utFelt").innerHTML="";

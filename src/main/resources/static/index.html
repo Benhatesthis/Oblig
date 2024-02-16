@@ -3,43 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="script.js"></script>
+    <script src="script.js" type="application/javascript"></script>
+    <style>
+        /*.form-group {
+            display: flex;
+            align-items: baseline;
+            width: fit-content;
+            margin-bottom: 10px;
+        }
+
+        label {
+            flex: 1;
+            width: auto;
+        }
+
+        input, select {
+            flex: 2;
+            margin-left: 10px;
+            width: fit-content;
+        }*/
+
+        label {
+             display: inline-block;
+             width: 100px;
+             text-align: right;
+             margin-right: 10px;
+         }
+         input {
+             width: 100px;
+             margin-bottom: 10px;
+         }
+
+         .oppgave {
+             border-style: solid;
+             border-color: blue;
+             padding-top: 50px;
+             padding-bottom: 50px;
+             padding-right: 5px;
+             padding-left: 5px;
+             width: 450px;
+         }
+
+        .error {
+            color: red;
+            float: right;
+            display: inline;
+        }
+    </style>
 </head>
 <body>
-<h1>Oblig 1</h1>
-<label for="film">Velg film: </label>
-<select id="film">
-    <option></option>
-    <option>Harry Potter and the Philosopher's Stone</option>
-    <option>Harry Potter and the Chamber of Secrets</option>
-    <option>Harry Potter and the Prisoner of Azkaban</option>
-    <option>Harry Potter and the Goblet of Fire</option>
-    <option>Harry Potter and the Order of the Phoenix</option>
-    <option>Harry Potter and the Half-BloodPrince</option>
-    <option>Harry Potter and the DeathlyHallows–Part1</option>
-    <option>Harry Potter and the DeathlyHallows–Part2</option>
-</select><br>
+<h1>Bestilling av kinobiletter - Oblig 1</h1>
+    <div class="oppgave">
+    <label for="film">Velg film : </label>
+    <select id="film">
+        <option></option>
+        <option>Harry Potter and the Philosopher's Stone</option>
+        <option>Harry Potter and the Chamber of Secrets</option>
+        <option>Harry Potter and the Prisoner of Azkaban</option>
+        <option>Harry Potter and the Goblet of Fire</option>
+        <option>Harry Potter and the Order of the Phoenix</option>
+        <option>Harry Potter and the Half-BloodPrince</option>
+        <option>Harry Potter and the DeathlyHallows–Part1</option>
+        <option>Harry Potter and the DeathlyHallows–Part2</option>
+    </select>
+    <div id="filmError" class="error"></div>
+<br>
+<br>
+    <label for="antall">Antall </label>
+    <input type="number" id="antall"><br>
+    <div id="antallError" class="error"></div>
+<br>
+    <label for="fornavn">Fornavn: </label>
+    <input type="text" id="fornavn"><br>
+    <div id="fornavnError" class="error"></div>
 
-<label for="antall">Antall: </label>
-<input type="number" id="antall"><br>
+    <label for="etternavn">Etternavn: </label>
+    <input type="text" id="etternavn"><br>
+    <div id="etternavnError" class="error"></div>
 
-<label for="fornavn">Fornavn: </label>
-<input type="text" id="fornavn"><br>
 
-<label for="etternavn">Etternavn: </label>
-<input type="text" id="etternavn"><br>
 
-<label for="telefon">Telefonnr: </label>
-<input type="number" id="telefon"><br>
+    <label for="telefon">Telefonnr: </label>
+    <input type="number" id="telefon"><br>
+    <div id="telefonError" class="error"></div>
 
-<label for="epost">Epost: </label>
-<input type="text" id="epost"><br>
 
+    <label for="epost">Epost: </label>
+    <input type="text" id="epost"><br>
+    <div id="epostError" class="error"></div>
 <button onclick="kjop()">Kjøp Billett</button><br><br>
 
 <h2>Alle billetter: </h2>
 <p id="utFelt"></p><br><br>
 
 <button onclick="slett()">Slett alle billetter</button>
+    </div>
 </body>
 </html>
