@@ -10,6 +10,8 @@ Fullt navn: Bendik Enger
 
 Kort beskrivelse av applikasjon: 
 Applikasjon for bestilling av kinobiletter.
-Skal hente inn informasjon og fylle inn bestillingen i et array. 
-Så skal det kunne vises.
-En knapp for å slette all informasjon.
+Skal hente inn relevant informasjon. 
+Sjekke etter feilmeldinger og ikke godta bilettkjøpet så
+lenge feilmeldinger er aktive.
+Lagre bestillingen i et array og skrive informasjonen ut under bestullings boksen.
+Det er og en knapp for å slette informasjonen i arrayet.

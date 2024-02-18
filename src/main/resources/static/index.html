@@ -2,32 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Oblig 1</title>
     <script src="script.js" type="application/javascript"></script>
+
+    <!--
+    Styling for å ligne mere på eksempelet
+    Error meldingene med egen farge så det skal lett oppfattes.
+    -->
     <style>
-        /*.form-group {
-            display: flex;
-            align-items: baseline;
-            width: fit-content;
-            margin-bottom: 10px;
-        }
-
         label {
-            flex: 1;
-            width: auto;
-        }
-
-        input, select {
-            flex: 2;
-            margin-left: 10px;
-            width: fit-content;
-        }*/
-
-        label {
-             display: inline-block;
-             width: 100px;
-             text-align: right;
-             margin-right: 10px;
+            display: inline-block;
+            width: 100px;
+            text-align: left;
+            margin-right: 10px;
          }
          input {
              width: 100px;
@@ -46,56 +33,62 @@
 
         .error {
             color: red;
-            float: right;
+            text-align: left;
             display: inline;
         }
     </style>
 </head>
 <body>
+<!--
+  Forskjellige innput bokser for forskjellige verdier.
+   -->
 <h1>Bestilling av kinobiletter - Oblig 1</h1>
     <div class="oppgave">
-    <label for="film">Velg film : </label>
+    <label for="film">Velg film</label>
     <select id="film">
         <option></option>
-        <option>Harry Potter and the Philosopher's Stone</option>
-        <option>Harry Potter and the Chamber of Secrets</option>
-        <option>Harry Potter and the Prisoner of Azkaban</option>
-        <option>Harry Potter and the Goblet of Fire</option>
-        <option>Harry Potter and the Order of the Phoenix</option>
-        <option>Harry Potter and the Half-BloodPrince</option>
-        <option>Harry Potter and the DeathlyHallows–Part1</option>
-        <option>Harry Potter and the DeathlyHallows–Part2</option>
+        <option>Jaws</option>
+        <option>UP</option>
+        <option>Dune</option>
+        <option>Wonka</option>
     </select>
     <div id="filmError" class="error"></div>
 <br>
 <br>
-    <label for="antall">Antall </label>
-    <input type="number" id="antall"><br>
+    <label for="antall">Antall</label>
+    <input type="number" id="antall">
     <div id="antallError" class="error"></div>
 <br>
-    <label for="fornavn">Fornavn: </label>
-    <input type="text" id="fornavn"><br>
+    <label for="fornavn">Fornavn</label>
+    <input type="text" id="fornavn">
     <div id="fornavnError" class="error"></div>
-
+<br>
     <label for="etternavn">Etternavn: </label>
-    <input type="text" id="etternavn"><br>
+    <input type="text" id="etternavn">
     <div id="etternavnError" class="error"></div>
-
-
-
+<br>
     <label for="telefon">Telefonnr: </label>
-    <input type="number" id="telefon"><br>
+    <input type="number" id="telefon">
     <div id="telefonError" class="error"></div>
-
-
+<br>
     <label for="epost">Epost: </label>
-    <input type="text" id="epost"><br>
+    <input type="text" id="epost">
     <div id="epostError" class="error"></div>
+<br>
+<!--
+Kaller metoden kjop definert i script
+-->
 <button onclick="kjop()">Kjøp Billett</button><br><br>
 
 <h2>Alle billetter: </h2>
+<!--
+Billettene blir hentet skrevet ut fra arrayet.
+-->
 <p id="utFelt"></p><br><br>
 
+<!--
+Kaller på metoden for å slette verdiene i arrayet.
+-->
 <button onclick="slett()">Slett alle billetter</button>
     </div>
 </body>
