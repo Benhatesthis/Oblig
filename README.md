@@ -14,4 +14,5 @@ Skal hente inn relevant informasjon.
 Sjekke etter feilmeldinger og ikke godta bilettkjøpet så
 lenge feilmeldinger er aktive.
 Lagre bestillingen i et array og skrive informasjonen ut under bestullings boksen.
+Input feltene tømmes når en bilett er kjøpt med riktig innputt og det er lagret i arrayet.
 Det er og en knapp for å slette informasjonen i arrayet.
